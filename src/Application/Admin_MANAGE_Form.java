@@ -1,13 +1,10 @@
 package Application;
 
 import CLASS.Books;
-import Application.Index_Form;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -29,7 +26,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         th.setFont(new Font("Tahoma", Font.PLAIN, 16));
     }
     
-    // function to populate the jtable with customers data
     public void populateJtable(){
         
         Books book = new Books();
@@ -54,7 +50,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         jTable_BOOKLIST_.getColumnModel().getColumn(1).setPreferredWidth(300);
         jTable_BOOKLIST_.getColumnModel().getColumn(2).setPreferredWidth(300);
     }
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -213,7 +208,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // button delete
     private void jButton_REMOVE_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_REMOVE_ActionPerformed
 
         try{
@@ -225,7 +219,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton_REMOVE_ActionPerformed
 
-    // button insert
     private void jButton_INSERT_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_INSERT_ActionPerformed
 
         if(verifFields())
@@ -240,7 +233,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton_INSERT_ActionPerformed
 
-    // get selected customer from jtable to textfields
     private void jTable_BOOKLIST_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_BOOKLIST_MouseClicked
 
         try{
@@ -256,7 +248,6 @@ public class Admin_MANAGE_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable_BOOKLIST_MouseClicked
 
-    // function to check empty fields
     public boolean verifFields()
     {
         if(jTextField_NAME.getText().equals("") || jTextField_AUTHOR.getText().equals("") || jTextField_YEAR.getText().equals(""))

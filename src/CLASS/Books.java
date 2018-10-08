@@ -61,7 +61,6 @@ public class Books {
         this.year = year;
     }
     
-    // get the books list
     public ArrayList<Books> booksList(){
         
         ArrayList<Books> books_list = new ArrayList<>();
@@ -82,8 +81,7 @@ public class Books {
                                  rs.getString("name"),
                                  rs.getString("author"),
                                  rs.getInt("year")
-                                 );
-                
+                                 );                
                 books_list.add(book);
             }
         
@@ -93,7 +91,6 @@ public class Books {
         return books_list;        
     }
     
-    // insert a new book
     public static void insertBook(Books book)
     {
         Connection conn = DB_INFO.getConnection();
@@ -127,9 +124,8 @@ public class Books {
         } catch (SQLException e) {
             Logger.getLogger(Books.class.getName()).log(Level.SEVERE, null, e);
         }
-    }  
+    }
     
-    // delete book by id
     public static void deleteBook(int bookId)
     {
         
@@ -141,7 +137,6 @@ public class Books {
 
             ps.setInt(1, bookId);
 
-            // show a confirmation message before deleting the Customer
             int YesOrNo = JOptionPane.showConfirmDialog(null,"Do You Really Want To Delete This Book","Delete Book", JOptionPane.YES_NO_OPTION);
             if(YesOrNo == 0){
                 
@@ -151,12 +146,12 @@ public class Books {
                 else{
                     JOptionPane.showMessageDialog(null, "Something Wrong");
                 }
-            }            
+            }  
+            
         } catch (SQLException ex) {
             Logger.getLogger(Books.class.getName()).log(Level.SEVERE, null, ex);
         }        
-    }
-    
+    }    
     
     public HashMap<String, Integer> populateCombo(){
 
@@ -169,7 +164,6 @@ public class Books {
       ResultSet rs;
 
        try {
-
            st = conn.createStatement();
 
            rs = st.executeQuery("SELECT `id`, `name`, `author`, `year` FROM `books` ");
@@ -177,21 +171,16 @@ public class Books {
            Books book;
 
            while(rs.next()){
-
                book = new Books(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
 
                map.put(book.getName(), book.getId());
-
            }
-
+           
        } catch (SQLException ex) {
-
            Logger.getLogger(Books.class.getName()).log(Level.SEVERE, null, ex);
-
-       }
+       }   
        
        return map;
-
    }
 }
 

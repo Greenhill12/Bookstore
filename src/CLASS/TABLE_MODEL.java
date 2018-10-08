@@ -1,11 +1,8 @@
 package CLASS;
 
-
 import javax.swing.Icon;
 import javax.swing.table.AbstractTableModel;
 
-
-// create a table model to display the products images in jtable
 public class TABLE_MODEL extends AbstractTableModel {
 
     private String[] columns;
@@ -19,8 +16,7 @@ public class TABLE_MODEL extends AbstractTableModel {
     }
     
     public Class getColumnClass(int col)
-    {
-        // the index of the image column is 4
+    {       
         if(col == 4){ return Icon.class; }
         
         else{
@@ -31,29 +27,24 @@ public class TABLE_MODEL extends AbstractTableModel {
     @Override
     public int getRowCount() {
     
-        return this.rows.length;
-        
+        return this.rows.length;       
     }
 
     @Override
     public int getColumnCount() {
     
-        return this.columns.length;
-        
+        return this.columns.length;        
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
     
-        return this.rows[rowIndex][columnIndex];
-        
+        return this.rows[rowIndex][columnIndex];        
     }
     
     @Override
     public String getColumnName(int col){
         
-        return this.columns[col];
-        
-    }
-    
+        return this.columns[col];        
+    }    
 }

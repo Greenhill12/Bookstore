@@ -5,8 +5,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -28,7 +26,6 @@ public class Index_Form extends javax.swing.JFrame {
         th.setFont(new Font("Tahoma", Font.PLAIN, 16));
     }
     
-    // function to populate the jtable with customers data
     public void populateJtable(){
         
         Books book = new Books();
@@ -51,8 +48,7 @@ public class Index_Form extends javax.swing.JFrame {
         jTable_BOOKLIST_.setRowHeight(45);
         jTable_BOOKLIST_.getColumnModel().getColumn(0).setPreferredWidth(50);
         jTable_BOOKLIST_.getColumnModel().getColumn(1).setPreferredWidth(300);
-        jTable_BOOKLIST_.getColumnModel().getColumn(2).setPreferredWidth(300);
-        
+        jTable_BOOKLIST_.getColumnModel().getColumn(2).setPreferredWidth(300);        
     }
         
     @SuppressWarnings("unchecked")
@@ -136,7 +132,6 @@ public class Index_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // button insert
     private void jButton_LOGIN_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LOGIN_ActionPerformed
         Login_Form login = new Login_Form();
         login.pack();
